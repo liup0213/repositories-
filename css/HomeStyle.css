@@ -1,0 +1,192 @@
+/*-*初始所有内容属性-*/
+* {
+    font-family: "微软雅黑";/*-字体-中文在外文服务器会出现兼容性问题一般不使用中文字体*/
+    margin: 0;/*-外边距-*/
+    padding: 0;/*-内边距-*/
+    box-sizing: border-box;/*-盒子模型的宽度，内边距宽度自动调整，保证盒子宽度不变的情况下-*/
+}
+/*-初始清除所有的li样式-*/
+li {
+    list-style: none;
+}
+/*-所有链接a标签的颜色及-*/
+a {
+    color: black;
+    text-decoration: none;/*-文本修饰的属性：none标准的文本，blink闪烁的文本、inherit继承父元素的该属性、overline文本上方一条线-*/
+}
+/*-所有链接a焦点、点击后，颜色其文本修饰，后面已被覆盖-*/
+a:focus, a:active {
+    color: red;
+    text-decoration: none;
+}
+/*-header style-*/
+/*-整体导航头部-*/
+.header_content {
+    width: 100%;
+    height: 80px;/*-垂直行高，标签高度*/
+    line-height: 80px;/*-文本行高：文本居中性-*/
+    background-color: white;/*-整体导航栏颜色-*/
+}
+.header {
+    margin: 0 auto;
+    width: 1080px;
+    text-align: right;/*-文本向右对齐-*/
+}
+
+.logo img{
+    vertical-align: middle;/*-图片居中对齐-*/
+}
+/*-导航栏左侧限定图标-*/
+.header .container .logo{
+    float: left;/*-左侧浮动-*/
+}
+/*-导航栏链接集合-*/
+.header .container .nav_right{
+    display: inline-block;/*-行块显示-*/
+}
+.nav_right .navigation {
+    display: inline-block;
+    font-size: 0px;
+}
+/*-li-*/
+.nav_item {
+    position: relative;/*-相对定位的元素，相对于其正常位置进行定位-*/
+    display: inline-block;
+    font-size: 14px;
+}
+/*-li下的a属性*/
+.nav_item a {
+    padding: 0 20px;/*-单个菜单左右填充间距-*/
+    color: black;
+    transition: all .2s linear 0s;/*从0秒开始 经过0.2秒的时间 用linear(一种线性设置)缓慢改变背景颜色 -*/
+}
+/*-非最后一个li::after伪类选择器：被选元素的内容后面插入内容:此处为|-*/
+/*-此处可以考虑是否为每个nav_item添加左边框border属性-*/
+.nav_item:not(:last-child)::after{
+    display: inline-block;/*-行块显示-*/
+    content: "";/*-内容空-*/
+    height: 10px;
+    width: 1px;
+    background-color: #cdcdcd;
+}
+/*-一级菜单属性：hover*/
+.nav_item.active >a, .nav_item>a:hover {
+    color: pink;
+}
+/*-二级菜单属性：ul-一级菜单下拉下的整个列表-*/
+.nav_item ul {
+    left: 0;/*距离左侧距离：相对父元素位置-*/
+    top: 68px;/*距离顶部高度：相对父元素位置-*/
+    position: absolute;/*绝对定位：相对父元素-*/
+    display: block;/*-块显示-*/
+    width: 100%;
+    max-height: 0;
+    background-color: white;
+    transition: all 0.2s linear 0s;/*-过渡属性-*/
+    overflow: hidden;/*内容溢出时不显示-*/
+    opacity: 0;/*透明度为0，隐藏-*/
+}
+/*-二级菜单属性：ul-li*/
+.nav_item ul li {
+    height: 32px;
+    width: 100%;
+    line-height: 32px;/*每个li的行高-*/
+    text-align: center;
+}
+/*-二级菜单属性：ul-li-a-hover（a专属伪类选择器）*/
+.nav_item ul li a:hover {
+    color: pink;
+}
+.nav_item:hover ul {
+    max-height: 300px;
+    opacity:1;
+}
+
+.nav_right .check-languges {
+    display: inline-block;
+    margin-left: 20px;
+}
+.nav_right .check-languges a {
+    padding: 5px;
+    font-size: 14px;
+    color: black;
+    transition: all .3s linear;
+    border: 1px solid #cdcdcd;
+    border-radius: 50%;
+}
+.nav_right .check-languges a:hover {
+    color: pink;
+}
+/*section下的图片透明度*/
+.banner a img{
+    width:100%;
+    padding: 5px 0;
+}
+
+.clear{
+    *zoom:1;
+}
+
+.clear:after{
+    visibility: hidden;
+    content:"";
+    display:block;
+    clear:both; height:0;
+}
+
+#wrap{
+    width: 100%;
+    margin:0 auto;
+    position:relative;
+    background: pink;
+
+}
+
+#inner{
+    width: 1000%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+#inner img{
+    width:10%;
+    height:100%;
+    float: left; }
+.slick{
+    width: 100%;
+    position: absolute;
+    bottom:10px;
+    text-align:center; }
+
+.slick span{
+    padding:5px 8px;
+    background: #F2F2F2;
+    color:red;
+    border-radius:50%;
+    cursor: pointer }
+
+.slick .selected{
+    background: red;
+    color:white; }
+
+.arrow{
+    position:absolute;
+    top:0;
+    width: 30px;
+    height: 286px;
+    line-height: 286px;
+    text-align: center;
+    color: red;
+    cursor: pointer; }
+
+#right{
+    right: 0;
+}
+
+.arrow:hover{
+    background: rgba(0,0,0,0.5);
+}
+
+
